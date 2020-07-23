@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import HelloWorld from './components/HelloWorld';
+import Gallery from './components/Gallery';
+import { GalleryProvider } from './components/GalleryContext';
 
-const wrapper = document.getElementById("container");
+const wrapper = document.getElementById('container');
 
-ReactDOM.render(<HelloWorld />, wrapper);
+ReactDOM.render(
+  <GalleryProvider>
+    <Gallery />
+  </GalleryProvider>,
+  wrapper,
+);
