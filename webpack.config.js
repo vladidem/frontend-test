@@ -4,6 +4,11 @@ const path = require('path');
 const srcPath = path.resolve(__dirname, 'src');
 
 module.exports = {
+  entry: path.join(srcPath, 'js', 'index.js'),
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: 'index.js'
+  },
   module: {
     rules: [
       {
@@ -25,7 +30,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: path.resolve(srcPath, 'index.html'),
+      template: path.join(srcPath, 'html', 'index.html'),
       filename: './index.html',
     }),
   ],
