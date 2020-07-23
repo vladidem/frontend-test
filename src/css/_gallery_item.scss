@@ -1,0 +1,16 @@
+.gallery_item {
+  margin: 0.5em;
+  flex-grow: 1;
+  height: 200px;
+  position: relative;
+
+  &__i {
+    display: block;
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    vertical-align: bottom;
+  }
+}

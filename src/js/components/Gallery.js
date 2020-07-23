@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 
 import { GalleryContext } from './GalleryContext';
 
-import Image from './Image';
+import GalleryItem from './GalleryItem';
 
 const Gallery = () => {
   const { images } = useContext(GalleryContext);
@@ -10,9 +10,11 @@ const Gallery = () => {
   return (
     <>
       <div>Gallery</div>
-      {images.map((image) => (
-        <Image key={image.id} image={image} />
-      ))}
+      <div className="gallery">
+        {images.map((image) => (
+          <GalleryItem key={image.id} image={image} />
+        ))}
+      </div>
     </>
   );
 };
