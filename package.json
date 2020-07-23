@@ -27,6 +27,7 @@
     "dependencies": {
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
+        "react-image": "^4.0.3",
         "shortid": "^2.2.15"
     }
 }
