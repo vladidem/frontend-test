@@ -1,20 +1,8 @@
-import React, { useContext } from 'react';
-
-import { GalleryContext } from './GalleryContext';
+import React from 'react';
 
 const Placeholder = () => {
-  const { imageMinHeight } = useContext(GalleryContext);
-
-  const placeholderStyle = {
-    flexGrow: imageMinHeight,
-    width: imageMinHeight,
-  };
-
   return (
-    <div
-      className="gallery_item gallery_item_placeholder"
-      style={placeholderStyle}
-    ></div>
+    <div className="gallery_item__img gallery_item__img_placeholder"></div>
   );
 };
 

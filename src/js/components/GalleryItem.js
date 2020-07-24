@@ -1,9 +1,8 @@
-import React, { useContext, useState, useRef, Suspense } from 'react';
+import React, { useContext, useState } from 'react';
 
 import { GalleryContext } from './GalleryContext';
 
 import Image from './Image';
-import Placeholder from './Placeholder';
 
 const GalleryItem = ({ image }) => {
   const { url } = image;
@@ -26,12 +25,10 @@ const GalleryItem = ({ image }) => {
   };
 
   return (
-    <Suspense fallback={<Placeholder />}>
-      <div className="gallery_item" style={galleryItemStyle}>
-        <div style={imageSpacerStyle}></div>
-        <Image targetSrc={url} setSize={setSize} />
-      </div>
-    </Suspense>
+    <div className="gallery_item" style={galleryItemStyle}>
+      <div style={imageSpacerStyle}></div>
+      <Image targetSrc={url} setSize={setSize} />
+    </div>
   );
 };
 
