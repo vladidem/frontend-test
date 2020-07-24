@@ -1,4 +1,9 @@
 .gallery {
   display: flex;
   flex-wrap: wrap;
+
+  &::after {
+    content: '';
+    flex-grow: 999999999;
+  }
 }
