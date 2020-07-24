@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { createContext, useState } from 'react';
+
 import shortid from 'shortid';
-import { createContext, useState } from 'react';
+
+import get from 'lodash-es/get';
 
 const MIN_HEIGHT = 200;
 
@@ -16,8 +18,13 @@ const GalleryProvider = ({ children }) => {
 
   const deleteImage = (id) => setImages(images.filter(image.id !== id));
 
+  const addImage = (image) => setImages([...images, image]);
+  const addImages = (newImages) => setImages([...images, ...newImages]);
+
   return (
-    <GalleryContext.Provider value={{ images, deleteImage, imageMinHeight: MIN_HEIGHT}}>
+    <GalleryContext.Provider
+      value={{ images, deleteImage, imageMinHeight: MIN_HEIGHT, addImage, addImages }}
+    >
       {children}
     </GalleryContext.Provider>
   );
