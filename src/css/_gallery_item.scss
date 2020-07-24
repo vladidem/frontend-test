@@ -1,12 +1,12 @@
 .gallery_item {
-  margin: 0.5em;
   flex-grow: 1;
-  height: 200px;
+  margin: 0.3em;
   position: relative;
 
-  &__i {
-    display: block;
+  &_placeholder {
+    background-color: rgb(133, 132, 132);
   }
+
   &__img {
     position: absolute;
     top: 0;
