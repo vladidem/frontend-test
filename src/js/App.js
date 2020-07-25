@@ -9,7 +9,7 @@ import GalleryControls from './components/GalleryControls';
 import { GalleryProvider } from './components/GalleryContext';
 
 const App = () => (
-  <div class="app">
+  <div className="app">
     <Header/>
     <GalleryProvider>
       <GalleryControls/>
