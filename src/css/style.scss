@@ -1,3 +1,12 @@
 @import './_gallery';
 @import './_gallery_item';
 @import './modal';
+
+@import '_button';
+
+.toolbar {
+  display: flex;
+  &_right {
+    justify-content: end;
+  }
+}
