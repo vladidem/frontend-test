@@ -10,6 +10,11 @@
   text-decoration: none;
   border: solid transparent 1px;
 
+  &_small {
+    padding: 0.2em 0.1em;
+    margin: 0.1em;
+  }
+
   &:hover {
     color: $text-primary;
     box-shadow: 0 0 0.3em $box-shadow;

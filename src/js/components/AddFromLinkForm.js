@@ -28,10 +28,11 @@ const AddFromLinkForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input name="url" ref={register({ required: true })} />
+    <form onSubmit={handleSubmit(onSubmit)} className="form">
+      <p className="modal__header">Добавить изображение по ссылке</p>
+      <input className="form__input" name="url" ref={register({ required: true })} />
 
-      {errors.url && 'Введите валидный url'}
+      {errors.url && <div className="alert alert_error">Введите валидный url</div>}
 
       <input className="button" type="submit" value="Добавить изображение" />
     </form>

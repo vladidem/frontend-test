@@ -1,20 +1,28 @@
 @import './colors';
 
-.modal__overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: $modal-overlay;
-}
+.modal {
+  &__header {
+    align-self: center;
+    font-size: 1.2em;
+    margin-bottom: 1.5em;
+  }
 
-.modal__content {
-  position: absolute;
-  top: 20%;
-  left: 30%;
-  right: 30%;
-  width: 40%;
-  padding: 1em;
-  background-color: white;
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $modal-overlay;
+  }
+
+  &__content {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    right: 30%;
+    width: 40%;
+    padding: 1em;
+    background-color: white;
+  }
 }

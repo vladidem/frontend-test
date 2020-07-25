@@ -22,7 +22,7 @@ const DefaultCloseButton = () => {
 
   return (
     <div className="toolbar toolbar_right">
-      <button className="button" onClick={closeModal}>
+      <button className="button button_small" onClick={closeModal}>
         <CloseIcon/>
       </button>
     </div>

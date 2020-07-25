@@ -35,10 +35,11 @@ const AddFromJsonForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <textarea name="json" ref={register({ required: true })} />
+    <form onSubmit={handleSubmit(onSubmit)} className="form">
+      <p className="modal__header">Добавить изображения из json</p>
+      <textarea className="form__input" name="json" ref={register({ required: true })} />
 
-      {errors.json && 'Введите валидный json'}
+      {errors.json && <div className="alert alert_error">Введите валидный json</div>}
 
       <input className="button" type="submit" value="Добавить изображения" />
     </form>
