@@ -10,6 +10,7 @@ import { yupResolver } from '@hookform/resolvers';
 import * as yup from 'yup';
 
 import { GalleryContext } from './GalleryContext';
+import { ModalContext } from './modal/ModalContext';
 
 const jsonFormSchema = yup.object().shape({
   json: yup
@@ -27,11 +28,16 @@ const AddFromJsonForm = () => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(jsonFormSchema),
   });
+  const { closeModal } = useContext(ModalContext);
 
   const onSubmit = (data) => {
     const newImages = get(data, 'json.galleryImages', []);
 
     addImages(newImages.map((image) => ({ id: shortid.generate(), ...image })));
+
+    if (closeModal) {
+      closeModal();
+    }
   };
 
   return (

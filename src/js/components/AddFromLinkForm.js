@@ -8,6 +8,7 @@ import { yupResolver } from '@hookform/resolvers';
 import * as yup from 'yup';
 
 import { GalleryContext } from './GalleryContext';
+import { ModalContext } from './modal/ModalContext';
 
 const linkFormSchema = yup.object().shape({
   url: yup.string().url().required(),
@@ -18,6 +19,8 @@ const AddFromLinkForm = () => {
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(linkFormSchema),
   });
+  const { closeModal } = useContext(ModalContext);
+
 
   const onSubmit = (data) => {
     const image = {
@@ -25,6 +28,10 @@ const AddFromLinkForm = () => {
       url: data.url,
     };
     addImage(image);
+
+    if (closeModal) {
+      closeModal();
+    }
   };
 
   return (
