@@ -1,11 +1,26 @@
-@import './_gallery';
-@import './_gallery_item';
+@import './gallery';
+@import './gallery_item';
 @import './modal';
+@import './footer';
+@import './header';
+@import './button';
+@import './colors';
 
-@import '_button';
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 .toolbar {
   display: flex;
+  flex-wrap: wrap;
+
   &_right {
     justify-content: end;
   }
