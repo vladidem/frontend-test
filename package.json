@@ -32,6 +32,7 @@
         "lodash-es": "^4.17.15",
         "react": "^16.13.1",
         "react-dom": "^16.13.1",
+        "react-dropzone": "^11.0.2",
         "react-error-boundary": "^2.3.1",
         "react-hook-form": "^6.0.8",
         "react-image": "^4.0.3",
