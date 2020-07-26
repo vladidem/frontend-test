@@ -4,6 +4,7 @@ import AddFromJsonForm from './AddFromJsonForm';
 import AddFromLinkForm from './AddFromLinkForm';
 import ButtonModal from '../modal/ButtonModal';
 import { ModalContext } from '../modal/ModalContext';
+import GalleryDropzone from './GalleryDropzone';
 
 const AddFromJsonButton = () => {
   const { openModal } = useContext(ModalContext);
@@ -27,7 +28,8 @@ const AddFromLinkButton = () => {
 
 const GalleryControls = () => {
   return (
-    <div className="toolbar toolbar_right">
+    <div className="toolbar">
+      <GalleryDropzone />
       <ButtonModal OpenButton={AddFromLinkButton}>
         <AddFromLinkForm />
       </ButtonModal>

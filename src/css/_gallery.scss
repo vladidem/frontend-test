@@ -1,3 +1,5 @@
+@import './colors';
+
 .gallery {
   display: flex;
   flex-wrap: wrap;
@@ -9,6 +11,16 @@
     justify-content: center;
     align-items: center;
     width: 100%;
+  }
+
+  &__dropzone {
+    align-self: flex-start;
+    flex-shrink: 1;
+    margin-right: auto;
+    &_active .button {
+      color: $text-primary;
+      box-shadow: 0 0 0.3em $box-shadow;
+    }
   }
 
   &::after {
