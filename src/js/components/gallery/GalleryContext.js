@@ -2,7 +2,7 @@ import React, { createContext, useState, useContext } from 'react';
 
 import shortid from 'shortid';
 
-import { ALERT_SUCCESS, AlertContext } from './AlertContext';
+import { AlertContext } from '../alerts/AlertContext';
 
 const MIN_HEIGHT = 200;
 

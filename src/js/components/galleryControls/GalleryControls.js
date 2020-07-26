@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 
 import AddFromJsonForm from './AddFromJsonForm';
 import AddFromLinkForm from './AddFromLinkForm';
-import ButtonModal from './modal/ButtonModal';
-import { ModalContext } from './modal/ModalContext';
+import ButtonModal from '../modal/ButtonModal';
+import { ModalContext } from '../modal/ModalContext';
 
 const AddFromJsonButton = () => {
   const { openModal } = useContext(ModalContext);

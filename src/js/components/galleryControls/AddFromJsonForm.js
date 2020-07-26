@@ -9,8 +9,8 @@ import get from 'lodash-es/get';
 import { yupResolver } from '@hookform/resolvers';
 import * as yup from 'yup';
 
-import { GalleryContext } from './GalleryContext';
-import { ModalContext } from './modal/ModalContext';
+import { GalleryContext } from '../gallery/GalleryContext';
+import { ModalContext } from '../modal/ModalContext';
 
 const jsonFormSchema = yup.object().shape({
   json: yup
