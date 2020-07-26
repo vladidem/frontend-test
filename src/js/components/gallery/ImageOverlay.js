@@ -12,6 +12,7 @@ const ImageOverlay = ({ image }) => {
       <button
         className="button button_icon button_delete"
         onClick={() => deleteImage(id)}
+        tabIndex="1"
       >
         <DeleteIcon />
       </button>

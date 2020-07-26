@@ -17,14 +17,15 @@
     z-index: 1010;
     background-color: $gallery-item-overlay;
 
-    .gallery-item:hover & {
+    .gallery-item:hover &,
+    .gallery-item:focus-within & {
       visibility: visible;
     }
 
     & .button_delete {
       color: $button-delete;
     }
-    & .button_delete:hover {
+    & .button_delete:hover, .button_delete:focus {
       color: $button-delete;
       box-shadow: 0 0 0.3em $text-danger;
     }
