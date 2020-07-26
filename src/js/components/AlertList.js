@@ -15,12 +15,14 @@ const Alert = ({ alert }) => {
 const AlertList = () => {
   const { alerts } = useContext(AlertContext);
 
-  return (
+  return alerts.length ? (
     <div className="alert-list">
       {alerts.map((alert) => (
         <Alert alert={alert} key={alert.id} />
       ))}
     </div>
+  ) : (
+    <></>
   );
 };
 
