@@ -21,7 +21,6 @@ const AddFromLinkForm = () => {
   });
   const { closeModal } = useContext(ModalContext);
 
-
   const onSubmit = (data) => {
     const image = {
       id: shortid.generate(),
@@ -37,9 +36,15 @@ const AddFromLinkForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form">
       <p className="modal__header">Добавить изображение по ссылке</p>
-      <input className="form__input" name="url" ref={register({ required: true })} />
+      <input
+        className="form__input"
+        name="url"
+        ref={register({ required: true })}
+      />
 
-      {errors.url && <div className="alert alert_error">Введите валидный url</div>}
+      {errors.url && (
+        <div className="form__error_message">Введите валидный url</div>
+      )}
 
       <input className="button" type="submit" value="Добавить изображение" />
     </form>

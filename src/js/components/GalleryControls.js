@@ -27,16 +27,13 @@ const AddFromLinkButton = () => {
 
 const GalleryControls = () => {
   return (
-    <div>
-      <div>GalleryControls</div>
-      <div className="toolbar toolbar_right">
-        <ButtonModal OpenButton={AddFromLinkButton}>
-          <AddFromLinkForm />
-        </ButtonModal>
-        <ButtonModal OpenButton={AddFromJsonButton}>
-          <AddFromJsonForm />
-        </ButtonModal>
-      </div>
+    <div className="toolbar toolbar_right">
+      <ButtonModal OpenButton={AddFromLinkButton}>
+        <AddFromLinkForm />
+      </ButtonModal>
+      <ButtonModal OpenButton={AddFromJsonButton}>
+        <AddFromJsonForm />
+      </ButtonModal>
     </div>
   );
 };

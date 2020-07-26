@@ -1,8 +1,8 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useContext } from 'react';
 
 import shortid from 'shortid';
 
-import get from 'lodash-es/get';
+import { ALERT_SUCCESS, AlertContext } from './AlertContext';
 
 const MIN_HEIGHT = 200;
 
@@ -15,15 +15,30 @@ const GalleryContext = createContext({});
 
 const GalleryProvider = ({ children }) => {
   const [images, setImages] = useState(unsplashImages);
+  const { alertSuccess } = useContext(AlertContext);
 
-  const deleteImage = (id) => setImages(images.filter(image.id !== id));
+  const deleteImage = (id) =>
+    setImages((image) => images.filter(image.id !== id));
 
-  const addImage = (image) => setImages([...images, image]);
-  const addImages = (newImages) => setImages([...images, ...newImages]);
+  const addImage = (image) => {
+    setImages([...images, image]);
+    alertSuccess('1 изображение добавлено');
+  };
+
+  const addImages = (newImages) => {
+    setImages([...images, ...newImages]);
+    alertSuccess(`${newImages.length} изображений добавлено`);
+  };
 
   return (
     <GalleryContext.Provider
-      value={{ images, deleteImage, imageMinHeight: MIN_HEIGHT, addImage, addImages }}
+      value={{
+        images,
+        deleteImage,
+        imageMinHeight: MIN_HEIGHT,
+        addImage,
+        addImages,
+      }}
     >
       {children}
     </GalleryContext.Provider>

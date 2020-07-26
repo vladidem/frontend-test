@@ -1,13 +1,5 @@
 @import './colors';
 
-.alert {
-  margin-bottom: 1em;
-
-  &_error {
-    color: $text-danger;
-  }
-}
-
 .form {
   display: flex;
   flex-direction: column;
@@ -15,5 +7,10 @@
 
   &__input {
     margin-bottom: 1em;
+  }
+
+  &__error_message {
+    margin-bottom: 1em;
+    color: $text-danger;
   }
 }
