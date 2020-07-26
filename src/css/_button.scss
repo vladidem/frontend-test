@@ -10,6 +10,10 @@
   text-decoration: none;
   border: solid transparent 1px;
 
+  &_icon {
+    background-color: transparent;
+  }
+
   &_small {
     padding: 0.2em 0.1em;
     margin: 0.1em;

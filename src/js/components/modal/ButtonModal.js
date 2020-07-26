@@ -6,7 +6,6 @@ import CloseIcon from '@material-ui/icons/Close';
 
 import { ModalContext, withModalProvider } from './ModalContext';
 
-
 const DefaultOpenButton = () => {
   const { openModal } = useContext(ModalContext);
 
@@ -22,8 +21,8 @@ const DefaultCloseButton = () => {
 
   return (
     <div className="toolbar toolbar_right">
-      <button className="button button_small" onClick={closeModal}>
-        <CloseIcon/>
+      <button className="button button_small button_icon" onClick={closeModal}>
+        <CloseIcon />
       </button>
     </div>
   );

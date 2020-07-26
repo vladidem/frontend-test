@@ -18,7 +18,7 @@ const GalleryProvider = ({ children }) => {
   const { alertSuccess } = useContext(AlertContext);
 
   const deleteImage = (id) =>
-    setImages((image) => images.filter(image.id !== id));
+    setImages(images.filter((image) => image.id !== id));
 
   const addImage = (image) => {
     setImages([...images, image]);
