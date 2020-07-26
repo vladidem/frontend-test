@@ -21,6 +21,10 @@
       color: $text-primary;
       box-shadow: 0 0 0.3em $box-shadow;
     }
+
+    @media (max-width: 768px) {
+      margin-left:auto;
+    }
   }
 
   &::after {
