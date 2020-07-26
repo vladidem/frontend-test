@@ -9,7 +9,7 @@ const AddFromJsonButton = () => {
   const { openModal } = useContext(ModalContext);
 
   return (
-    <button className="button" onClick={openModal}>
+    <button className="button" onClick={openModal} tabIndex="1">
       Импортирвать из JSON
     </button>
   );
@@ -19,7 +19,7 @@ const AddFromLinkButton = () => {
   const { openModal } = useContext(ModalContext);
 
   return (
-    <button className="button" onClick={openModal}>
+    <button className="button" onClick={openModal} tabIndex="1">
       Добавить по ссылке
     </button>
   );

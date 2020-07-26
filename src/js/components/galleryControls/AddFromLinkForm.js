@@ -40,13 +40,19 @@ const AddFromLinkForm = () => {
         className="form__input"
         name="url"
         ref={register({ required: true })}
+        tabIndex="1"
       />
 
       {errors.url && (
         <div className="form__error-message">Введите валидный url</div>
       )}
 
-      <input className="button" type="submit" value="Добавить изображение" />
+      <input
+        className="button"
+        type="submit"
+        value="Добавить изображение"
+        tabIndex="1"
+      />
     </form>
   );
 };

@@ -47,13 +47,19 @@ const AddFromJsonForm = () => {
         className="form__input"
         name="json"
         ref={register({ required: true })}
+        tabIndex="1"
       />
 
       {errors.json && (
         <div className="form__error-message">Введите валидный json</div>
       )}
 
-      <input className="button" type="submit" value="Добавить изображения" />
+      <input
+        className="button"
+        type="submit"
+        value="Добавить изображения"
+        tabIndex="1"
+      />
     </form>
   );
 };

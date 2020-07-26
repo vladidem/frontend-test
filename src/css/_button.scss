@@ -19,7 +19,7 @@
     margin: 0.1em;
   }
 
-  &:hover {
+  &:hover, &:focus {
     color: $text-primary;
     box-shadow: 0 0 0.3em $box-shadow;
   }
