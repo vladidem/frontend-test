@@ -47,12 +47,9 @@ const AddFromLinkForm = () => {
         <div className="form__error-message">Введите валидный url</div>
       )}
 
-      <input
-        className="button"
-        type="submit"
-        value="Добавить изображение"
-        tabIndex="1"
-      />
+      <button className="button" type="submit" tabIndex="1">
+        Добавить изображение
+      </button>
     </form>
   );
 };

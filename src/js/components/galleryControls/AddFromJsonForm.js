@@ -54,12 +54,9 @@ const AddFromJsonForm = () => {
         <div className="form__error-message">Введите валидный json</div>
       )}
 
-      <input
-        className="button"
-        type="submit"
-        value="Добавить изображения"
-        tabIndex="1"
-      />
+      <button className="button" type="submit" tabIndex="1">
+        Добавить изображения
+      </button>
     </form>
   );
 };

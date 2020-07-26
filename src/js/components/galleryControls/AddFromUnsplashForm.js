@@ -2,10 +2,6 @@ import React, { useContext } from 'react';
 
 import { useForm } from 'react-hook-form';
 
-import shortid from 'shortid';
-
-import get from 'lodash-es/get';
-
 import { yupResolver } from '@hookform/resolvers';
 import * as yup from 'yup';
 
@@ -50,12 +46,9 @@ const AddFromUnsplashForm = () => {
         <div className="form__error-message">Введите валидное количество</div>
       )}
 
-      <input
-        className="button"
-        type="submit"
-        value="Добавить изображения"
-        tabIndex="1"
-      />
+      <button className="button" type="submit" tabIndex="1">
+        Добавить изображения
+      </button>
     </form>
   );
 };
