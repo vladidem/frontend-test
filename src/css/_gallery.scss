@@ -3,6 +3,14 @@
   flex-wrap: wrap;
   margin-bottom: 2em;
 
+  &__placeholder {
+    display: flex;
+    min-height: 40vh;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
   &::after {
     content: '';
     flex-grow: 999999999;
