@@ -1,6 +1,6 @@
 @import './colors';
 
-.alert_list {
+.alert-list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,6 +11,7 @@
     border-radius: 5px;
     padding: 0.3em;
     box-shadow: 0 0 0.3em $background-important;
+
     &_success {
       color: $text-success;
     }

@@ -6,8 +6,8 @@ import cx from 'classnames';
 
 const Alert = ({ alert }) => {
   const classes = {
-    alert_list__item: true,
-    alert_list__item_success: alert.type === ALERT_SUCCESS,
+    'alert-list__item': true,
+    'alert-list__item_success': alert.type === ALERT_SUCCESS,
   };
   return <div className={cx(classes)}>{alert.message}</div>;
 };
@@ -16,7 +16,7 @@ const AlertList = () => {
   const { alerts } = useContext(AlertContext);
 
   return (
-    <div className="alert_list">
+    <div className="alert-list">
       {alerts.map((alert) => (
         <Alert alert={alert} key={alert.id} />
       ))}

@@ -43,7 +43,7 @@ const AddFromLinkForm = () => {
       />
 
       {errors.url && (
-        <div className="form__error_message">Введите валидный url</div>
+        <div className="form__error-message">Введите валидный url</div>
       )}
 
       <input className="button" type="submit" value="Добавить изображение" />

@@ -17,7 +17,7 @@ const Image = ({ setSize, targetSrc }) => {
 
   return (
     <img
-      className="gallery_item__img"
+      className="gallery-item__img"
       src={src}
       onLoad={onLoad}
       ref={ref}

@@ -25,7 +25,7 @@ const GalleryItem = ({ image }) => {
   };
 
   return (
-    <div className="gallery_item" style={galleryItemStyle}>
+    <div className="gallery-item" style={galleryItemStyle}>
       <div style={imageSpacerStyle}></div>
       <Image targetSrc={url} setSize={setSize} />
     </div>
