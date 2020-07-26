@@ -1,6 +1,7 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 
-import DeleteIcon from '@material-ui/icons/DeleteOutline';
+import DeleteIcon from '@material-ui/icons/DeleteForeverSharp';
+
 import { GalleryContext } from './GalleryContext';
 
 const ImageOverlay = ({ image }) => {
