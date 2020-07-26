@@ -31,7 +31,7 @@ const GalleryDropzone = () => {
       <button className="button" tabIndex="1">
         <input {...getInputProps()} />
         <AddToPhotos />
-        <p>Добавьте или перетащите файлы</p>
+        <p>Выберите или перетащите файлы</p>
       </button>
     </div>
   );

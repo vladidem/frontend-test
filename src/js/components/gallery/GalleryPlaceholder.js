@@ -6,7 +6,7 @@ const GalleryPlaceholder = () => {
   return (
     <div className="gallery__placeholder">
       <PhotoLibraryIcon />
-      No photos
+      Нет изображений
     </div>
   );
 };
