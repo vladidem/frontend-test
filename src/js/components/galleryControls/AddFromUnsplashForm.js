@@ -9,7 +9,7 @@ import { GalleryContext } from '../gallery/GalleryContext';
 import { ModalContext } from '../modal/ModalContext';
 
 const unsplashFormSchema = yup.object().shape({
-  amount: yup.number().required(),
+  amount: yup.number().integer().moreThan(0).lessThan(101).required(),
 });
 
 const AddFromUnsplashForm = () => {
@@ -43,8 +43,10 @@ const AddFromUnsplashForm = () => {
         ref={register({ required: true })}
         tabIndex="1"
       />
-      {errors.json && (
-        <div className="form__error-message">Введите валидное количество</div>
+      {errors.amount && (
+        <div className="form__error-message">
+          Введите валидное количество от 1 до 100
+        </div>
       )}
 
       <button className="button" type="submit" tabIndex="1">
