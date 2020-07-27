@@ -17,18 +17,25 @@ const GalleryDropzoneOverlay = () => {
   const hideOverlay = () => {
     setIsOverlayVisible(false);
   };
+
+  const eventListeners = {
+    dragenter: showOverlay,
+    dragover: showOverlay,
+    dragleave: hideOverlay,
+    drop: hideOverlay,
+  };
+
   useEffect(() => {
-    document.addEventListener('dragenter', showOverlay);
-    document.addEventListener('dragover', showOverlay);
-    document.addEventListener('dragleave', hideOverlay);
-    document.addEventListener('drop', hideOverlay);
+    Object.entries(eventListeners).map(([event, listener]) =>
+      document.addEventListener(event, listener),
+    );
     return () => {
-      document.removeEventListener('dragenter', showOverlay);
-      document.removeEventListener('dragover', showOverlay);
-      document.removeEventListener('dragleave', hideOverlay);
-      document.removeEventListener('drop', hideOverlay);
+      Object.entries(eventListeners).map(([event, listener]) =>
+        document.removeEventListener(event, listener),
+      );
     };
   }, []);
+
   const dropzoneOverlayClasses = {
     dropzone__overlay: true,
     dropzone__overlay_active: isOverlayVisible,
