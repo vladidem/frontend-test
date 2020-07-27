@@ -9,9 +9,7 @@ import shortid from 'shortid';
 
 import { GalleryContext } from './../gallery/GalleryContext';
 
-const GalleryDropzone = () => {
-  const { addImages } = useContext(GalleryContext);
-
+const GalleryDropzoneOverlay = () => {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const showOverlay = () => {
     setIsOverlayVisible(true);
@@ -29,9 +27,23 @@ const GalleryDropzone = () => {
       document.removeEventListener('dragover', showOverlay);
       document.removeEventListener('dragleave', hideOverlay);
       document.removeEventListener('drop', hideOverlay);
-    }
+    };
   }, []);
+  const dropzoneOverlayClasses = {
+    dropzone__overlay: true,
+    dropzone__overlay_active: isOverlayVisible,
+  };
 
+  return (
+    <div className={cx(dropzoneOverlayClasses)}>
+      <AddToPhotos />
+      <p>Перетащите файлы</p>
+    </div>
+  );
+};
+
+const GalleryDropzone = () => {
+  const { addImages } = useContext(GalleryContext);
 
   const onDrop = (acceptedFiles) => {
     addImages(
@@ -48,11 +60,6 @@ const GalleryDropzone = () => {
     dropzone_active: isDragActive,
   };
 
-  const dropzoneOverlayClasses = {
-    dropzone__overlay: true,
-    dropzone__overlay_active: isOverlayVisible,
-  };
-
   return (
     <div {...getRootProps({ className: cx(dropzoneClasses) })}>
       <button className="button" tabIndex="1">
@@ -60,10 +67,7 @@ const GalleryDropzone = () => {
         <AddToPhotos />
         <p>Выберите или перетащите файлы</p>
       </button>
-      <div className={cx(dropzoneOverlayClasses)}>
-        <AddToPhotos />
-        <p>Перетащите файлы</p>
-      </div>
+      <GalleryDropzoneOverlay />
     </div>
   );
 };
