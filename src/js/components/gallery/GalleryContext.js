@@ -35,6 +35,7 @@ const GalleryProvider = ({ children }) => {
 
   const addUnsplashImages = (amount) => {
     addImages(generateUnsplashImages(amount));
+    alertSuccess(`${amount} изображений добавлено`);
   }
 
   return (
