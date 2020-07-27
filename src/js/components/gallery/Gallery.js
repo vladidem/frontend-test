@@ -10,9 +10,11 @@ const Gallery = () => {
 
   return (
     <div className="gallery">
-      {images.length ? images.map((image) => (
-        <GalleryItem key={image.id} image={image} />
-      )):<GalleryPlaceholder/>}
+      {images.length ? (
+        images.map((image) => <GalleryItem key={image.id} image={image} />)
+      ) : (
+        <GalleryPlaceholder />
+      )}
     </div>
   );
 };
