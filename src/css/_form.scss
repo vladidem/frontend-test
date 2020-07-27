@@ -5,6 +5,10 @@
   flex-direction: column;
   justify-content: center;
 
+  &__label {
+    color: $text-secondary;
+  }
+
   &__input {
     margin-bottom: 1em;
   }

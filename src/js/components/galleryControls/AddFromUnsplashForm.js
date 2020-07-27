@@ -34,6 +34,8 @@ const AddFromUnsplashForm = () => {
       <p className="modal__header">
         Добавить случайные изображения из unsplash
       </p>
+
+      <label className="form__label">Количество случайных изображений</label>
       <input
         type="number"
         className="form__input"
@@ -41,7 +43,6 @@ const AddFromUnsplashForm = () => {
         ref={register({ required: true })}
         tabIndex="1"
       />
-
       {errors.json && (
         <div className="form__error-message">Введите валидное количество</div>
       )}

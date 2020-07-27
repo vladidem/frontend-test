@@ -36,13 +36,14 @@ const AddFromLinkForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form">
       <p className="modal__header">Добавить изображение по ссылке</p>
+
+      <label className="form__label">Ссылка</label>
       <input
         className="form__input"
         name="url"
         ref={register({ required: true })}
         tabIndex="1"
       />
-
       {errors.url && (
         <div className="form__error-message">Введите валидный url</div>
       )}
