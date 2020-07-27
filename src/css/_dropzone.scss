@@ -1,0 +1,31 @@
+.dropzone {
+  align-self: flex-start;
+  flex-shrink: 1;
+  margin-right: auto;
+  @media (max-width: 768px) {
+    margin-left: auto;
+  }
+
+  &_active .button {
+    color: $text-primary;
+    box-shadow: 0 0 0.3em $box-shadow;
+  }
+
+  &__overlay {
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: $dropzone-overlay;
+    color: $text-important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1011;
+    &_active {
+      visibility: visible;
+    }
+  }
+}
