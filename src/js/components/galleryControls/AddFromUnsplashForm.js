@@ -2,18 +2,20 @@ import React, { useContext } from 'react';
 
 import { useForm } from 'react-hook-form';
 
+import { useDispatch } from 'react-redux';
+
 import { yupResolver } from '@hookform/resolvers';
 import * as yup from 'yup';
 
-import { GalleryContext } from '../gallery/GalleryContext';
 import { ModalContext } from '../modal/ModalContext';
+import { addFromUnsplash } from '../../redux/images/actions';
 
 const unsplashFormSchema = yup.object().shape({
   amount: yup.number().integer().moreThan(0).lessThan(101).required(),
 });
 
 const AddFromUnsplashForm = () => {
-  const { addUnsplashImages } = useContext(GalleryContext);
+  const dispatch = useDispatch();
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(unsplashFormSchema),
   });
@@ -22,7 +24,7 @@ const AddFromUnsplashForm = () => {
   const onSubmit = (data) => {
     const { amount } = data;
 
-    addUnsplashImages(amount);
+    dispatch(addFromUnsplash(amount));
 
     if (closeModal) {
       closeModal();

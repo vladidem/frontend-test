@@ -1,12 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
-import { GalleryContext } from './GalleryContext';
+import { useSelector } from 'react-redux';
 
 import GalleryItem from './GalleryItem';
 import GalleryPlaceholder from './GalleryPlaceholder';
 
 const Gallery = () => {
-  const { images } = useContext(GalleryContext);
+  const images = useSelector((state) => state.images);
 
   return (
     <div className="gallery">

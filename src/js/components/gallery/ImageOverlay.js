@@ -1,18 +1,19 @@
-import React, { useContext } from 'react';
+import React from 'react';
+
+import { useDispatch } from 'react-redux';
 
 import DeleteIcon from '@material-ui/icons/DeleteForeverSharp';
-
-import { GalleryContext } from './GalleryContext';
+import { deleteImage } from '../../redux/images/actions';
 
 const ImageOverlay = ({ image }) => {
+  const dispatch = useDispatch();
   const { id } = image;
-  const { deleteImage } = useContext(GalleryContext);
 
   return (
     <div className="gallery-item__overlay">
       <button
         className="button button_icon button_delete"
-        onClick={() => deleteImage(id)}
+        onClick={() => dispatch(deleteImage(id))}
         tabIndex="1"
       >
         <DeleteIcon />

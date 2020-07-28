@@ -1,12 +1,14 @@
 import React, { useState, useContext, useEffect } from 'react';
 
-import AddToPhotos from '@material-ui/icons/AddToPhotos';
+import { useDispatch } from 'react-redux';
 
 import { useDropzone } from 'react-dropzone';
 
+import AddToPhotos from '@material-ui/icons/AddToPhotos';
+
 import cx from 'classnames';
 
-import { GalleryContext } from './../gallery/GalleryContext';
+import { addFromFiles } from '../../redux/images/actions';
 
 const GalleryDropzoneOverlay = () => {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
@@ -49,9 +51,8 @@ const GalleryDropzoneOverlay = () => {
 };
 
 const GalleryDropzone = () => {
-  const { addFromFiles } = useContext(GalleryContext);
-
-  const onDrop = addFromFiles;
+  const dispatch = useDispatch();
+  const onDrop = (files) => dispatch(addFromFiles(files));
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   const dropzoneClasses = {

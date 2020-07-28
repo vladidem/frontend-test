@@ -2,18 +2,15 @@ import React, { useContext } from 'react';
 
 import { useForm } from 'react-hook-form';
 
-import shortid from 'shortid';
+import { useDispatch } from 'react-redux';
 
 import get from 'lodash-es/get';
 import isEmpty from 'lodash-es/isEmpty';
 
-import { yupResolver } from '@hookform/resolvers';
-import * as yup from 'yup';
-
-import { GalleryContext } from '../gallery/GalleryContext';
 import { ModalContext } from '../modal/ModalContext';
 
 import { jsonSchema, urlSchema } from './schemas';
+import { addFromJson, addFromUrl } from '../../redux/images/actions';
 
 const anyResolver = (input) => {
   const data = get(input, 'jsonOrUrl', {});
@@ -39,7 +36,7 @@ const anyResolver = (input) => {
 };
 
 const AddFromAnyForm = () => {
-  const { addFromJson, addFromUrl } = useContext(GalleryContext);
+  const dispatch = useDispatch();
   const { register, handleSubmit, errors } = useForm({
     resolver: anyResolver,
   });
@@ -47,9 +44,9 @@ const AddFromAnyForm = () => {
 
   const onSubmit = (data) => {
     if (!isEmpty(data.json)) {
-      addFromJson(data.json);
+      dispatch(addFromJson(data.json));
     } else if (!isEmpty(data.url)) {
-      addFromUrl(data.url);
+      dispatch(addFromUrl(data.url));
     }
 
     if (closeModal) {
