@@ -8,6 +8,7 @@
 @import './form';
 @import './alert';
 @import './dropzone';
+@import './toolbar';
 
 * {
   padding: 0;
@@ -20,17 +21,4 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
-
-.toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: end;
-  align-items: end;
-  margin: 1em;
-
-  @media (max-width: 768px) {
-    justify-content: center;
-    align-items: center;
-   }
 }
