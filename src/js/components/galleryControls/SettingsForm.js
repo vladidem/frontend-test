@@ -34,7 +34,9 @@ const SettingsForm = () => {
     <form onSubmit={handleSubmit(onSubmit)} className="form">
       <p className="modal__header">Изменить минимальную высоту изображений</p>
 
-      <label className="form__label">Минимальная высота изображений</label>
+      <label className="form__label" tabIndex="1">
+        Минимальная высота изображений
+      </label>
       <input
         type="number"
         className="form__input"
