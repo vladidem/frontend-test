@@ -2,6 +2,8 @@ import React, { createContext, useState, useContext } from 'react';
 
 import shortid from 'shortid';
 
+import get from 'lodash-es/get';
+
 import { AlertContext } from '../alerts/AlertContext';
 
 const MIN_HEIGHT = 200;
@@ -36,7 +38,21 @@ const GalleryProvider = ({ children }) => {
   const addUnsplashImages = (amount) => {
     addImages(generateUnsplashImages(amount));
     alertSuccess(`${amount} изображений добавлено`);
-  }
+  };
+
+  const addFromJson = (json) => {
+    const newImages = get(json, 'galleryImages', []);
+
+    addImages(newImages.map((image) => ({ id: shortid.generate(), ...image })));
+  };
+
+  const addFromUrl = (url) => {
+    const image = {
+      id: shortid.generate(),
+      url,
+    };
+    addImage(image);
+  };
 
   return (
     <GalleryContext.Provider
@@ -47,6 +63,8 @@ const GalleryProvider = ({ children }) => {
         addImage,
         addImages,
         addUnsplashImages,
+        addFromJson,
+        addFromUrl
       }}
     >
       {children}
