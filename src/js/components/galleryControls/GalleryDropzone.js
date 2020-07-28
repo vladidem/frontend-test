@@ -5,7 +5,6 @@ import AddToPhotos from '@material-ui/icons/AddToPhotos';
 import { useDropzone } from 'react-dropzone';
 
 import cx from 'classnames';
-import shortid from 'shortid';
 
 import { GalleryContext } from './../gallery/GalleryContext';
 
@@ -50,16 +49,9 @@ const GalleryDropzoneOverlay = () => {
 };
 
 const GalleryDropzone = () => {
-  const { addImages } = useContext(GalleryContext);
+  const { addFromFiles } = useContext(GalleryContext);
 
-  const onDrop = (acceptedFiles) => {
-    addImages(
-      acceptedFiles.map((file) => ({
-        url: URL.createObjectURL(file),
-        id: shortid.generate(),
-      })),
-    );
-  };
+  const onDrop = addFromFiles;
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   const dropzoneClasses = {
