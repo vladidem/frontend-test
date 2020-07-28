@@ -22,13 +22,13 @@
     background-color: white;
     top: 20%;
 
-    @media (max-width: 576px) {
+    @media (max-width: 575.99px) {
       left: 10%;
       right: 10%;
       width: 80%;
     }
 
-    @media (min-width: 576px) and (max-width: 992px) {
+    @media (min-width: 576px) and (max-width: 991.99px) {
       left: 20%;
       right: 20%;
       width: 60%;
