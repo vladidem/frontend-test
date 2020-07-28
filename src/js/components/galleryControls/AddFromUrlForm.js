@@ -9,24 +9,21 @@ import * as yup from 'yup';
 
 import { GalleryContext } from '../gallery/GalleryContext';
 import { ModalContext } from '../modal/ModalContext';
+import { urlSchema } from './schemas';
 
-const linkFormSchema = yup.object().shape({
-  url: yup.string().url().required(),
+const urlFormSchema = yup.object().shape({
+  url: urlSchema,
 });
 
-const AddFromLinkForm = () => {
-  const { addImage } = useContext(GalleryContext);
+const AddFromUrlForm = () => {
+  const { addFromUrl } = useContext(GalleryContext);
   const { register, handleSubmit, errors } = useForm({
-    resolver: yupResolver(linkFormSchema),
+    resolver: yupResolver(urlFormSchema),
   });
   const { closeModal } = useContext(ModalContext);
 
   const onSubmit = (data) => {
-    const image = {
-      id: shortid.generate(),
-      url: data.url,
-    };
-    addImage(image);
+    addFromUrl(data.url);
 
     if (closeModal) {
       closeModal();
@@ -55,4 +52,4 @@ const AddFromLinkForm = () => {
   );
 };
 
-export default AddFromLinkForm;
+export default AddFromUrlForm;

@@ -11,29 +11,21 @@ import * as yup from 'yup';
 
 import { GalleryContext } from '../gallery/GalleryContext';
 import { ModalContext } from '../modal/ModalContext';
+import { jsonSchema } from './schemas';
 
 const jsonFormSchema = yup.object().shape({
-  json: yup
-    .object()
-    .shape({
-      galleryImages: yup
-        .array(yup.object().shape({ url: yup.string().url().required() }))
-        .required(),
-    })
-    .required(),
+  json: jsonSchema,
 });
 
 const AddFromJsonForm = () => {
-  const { addImages } = useContext(GalleryContext);
+  const { addFromJson } = useContext(GalleryContext);
   const { register, handleSubmit, errors } = useForm({
     resolver: yupResolver(jsonFormSchema),
   });
   const { closeModal } = useContext(ModalContext);
 
   const onSubmit = (data) => {
-    const newImages = get(data, 'json.galleryImages', []);
-
-    addImages(newImages.map((image) => ({ id: shortid.generate(), ...image })));
+    addFromJson(data.json);
 
     if (closeModal) {
       closeModal();
@@ -42,9 +34,9 @@ const AddFromJsonForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form">
-      <p className="modal__header">Добавить изображения из json</p>
+      <p className="modal__header">Добавить изображения из JSON</p>
 
-      <label className="form__label">json</label>
+      <label className="form__label">JSON</label>
       <textarea
         className="form__input"
         name="json"
@@ -52,7 +44,7 @@ const AddFromJsonForm = () => {
         tabIndex="1"
       />
       {errors.json && (
-        <div className="form__error-message">Введите валидный json</div>
+        <div className="form__error-message">Введите валидный JSON</div>
       )}
 
       <button className="button" type="submit" tabIndex="1">
