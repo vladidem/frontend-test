@@ -4,7 +4,8 @@ import shortid from 'shortid';
 
 import get from 'lodash-es/get';
 
-import { AlertContext } from '../alerts/AlertContext';
+import { useDispatch } from 'react-redux';
+import { alertSuccess } from '../../redux/alerts/actions';
 
 const MIN_HEIGHT = 200;
 
@@ -21,7 +22,7 @@ const GalleryContext = createContext({});
 const GalleryProvider = ({ children }) => {
   const [images, setImages] = useState([]);
   const [imageMinHeight, setImageMinHeight] = useState(MIN_HEIGHT);
-  const { alertSuccess } = useContext(AlertContext);
+  const dispatch = useDispatch();
 
   const deleteImage = (id) =>
     setImages(images.filter((image) => image.id !== id));
@@ -33,12 +34,11 @@ const GalleryProvider = ({ children }) => {
 
   const addImages = (newImages) => {
     setImages([...images, ...newImages]);
-    alertSuccess(`${newImages.length} изображений добавлено`);
+    dispatch(alertSuccess(`${newImages.length} изображений добавлено`));
   };
 
   const addUnsplashImages = (amount) => {
     addImages(generateUnsplashImages(amount));
-    alertSuccess(`${amount} изображений добавлено`);
   };
 
   const addFromJson = (json) => {
@@ -100,7 +100,9 @@ const GalleryProvider = ({ children }) => {
 
   const updateMinHeight = (height) => {
     setImageMinHeight(height);
-    alertSuccess(`Минимальная высота изображений установлена на ${height}`);
+    dispatch(
+      alertSuccess(`Минимальная высота изображений установлена на ${height}`),
+    );
   };
 
   return (
