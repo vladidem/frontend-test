@@ -1,7 +1,5 @@
 import React, { useContext } from 'react';
 
-import AddFromJsonForm from './AddFromJsonForm';
-import AddFromUrlForm from './AddFromUrlForm';
 import ButtonModal from '../modal/ButtonModal';
 import { ModalContext } from '../modal/ModalContext';
 import GalleryDropzone from './GalleryDropzone';
@@ -14,26 +12,6 @@ const AddFromAnyButton = () => {
   return (
     <button className="button" onClick={openModal} tabIndex="1">
       Добавить по ссылке или из JSON
-    </button>
-  );
-};
-
-const AddFromJsonButton = () => {
-  const { openModal } = useContext(ModalContext);
-
-  return (
-    <button className="button" onClick={openModal} tabIndex="1">
-      Импортировать из JSON
-    </button>
-  );
-};
-
-const AddFromLinkButton = () => {
-  const { openModal } = useContext(ModalContext);
-
-  return (
-    <button className="button" onClick={openModal} tabIndex="1">
-      Добавить по ссылке
     </button>
   );
 };
@@ -53,16 +31,10 @@ const GalleryControls = () => {
     <div className="toolbar">
       <GalleryDropzone />
       <ButtonModal OpenButton={AddFromAnyButton}>
-        <AddFromAnyForm/>
+        <AddFromAnyForm />
       </ButtonModal>
       <ButtonModal OpenButton={AddFromUnsplashButton}>
         <AddFromUnsplashForm />
-      </ButtonModal>
-      <ButtonModal OpenButton={AddFromLinkButton}>
-        <AddFromUrlForm />
-      </ButtonModal>
-      <ButtonModal OpenButton={AddFromJsonButton}>
-        <AddFromJsonForm />
       </ButtonModal>
     </div>
   );
