@@ -18,17 +18,26 @@
 
   &__content {
     position: absolute;
-    top: 20%;
-    left: 30%;
-    right: 30%;
-    width: 40%;
     padding: 1em;
     background-color: white;
+    top: 20%;
+
     @media (max-width: 576px) {
-      top: 10%;
       left: 10%;
       right: 10%;
       width: 80%;
+    }
+
+    @media (min-width: 576px) and (max-width: 992px) {
+      left: 20%;
+      right: 20%;
+      width: 60%;
+    }
+
+    @media (min-width: 992px) {
+      left: 30%;
+      right: 30%;
+      width: 40%;
     }
   }
 }
