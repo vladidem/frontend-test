@@ -20,6 +20,7 @@ const GalleryContext = createContext({});
 
 const GalleryProvider = ({ children }) => {
   const [images, setImages] = useState([]);
+  const [imageMinHeight, setImageMinHeight] = useState(MIN_HEIGHT);
   const { alertSuccess } = useContext(AlertContext);
 
   const deleteImage = (id) =>
@@ -53,13 +54,18 @@ const GalleryProvider = ({ children }) => {
     };
     addImage(image);
   };
+  const updateMinHeight = (height) => {
+    setImageMinHeight(height);
+    alertSuccess(`Минимальная высота изображений установлена на ${height}`)
+  }
 
   return (
     <GalleryContext.Provider
       value={{
         images,
         deleteImage,
-        imageMinHeight: MIN_HEIGHT,
+        imageMinHeight,
+        updateMinHeight,
         addImage,
         addImages,
         addUnsplashImages,
