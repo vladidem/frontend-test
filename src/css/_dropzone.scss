@@ -6,11 +6,6 @@
     margin-left: auto;
   }
 
-  &_active .button {
-    color: $text-primary;
-    box-shadow: 0 0 0.3em $box-shadow;
-  }
-
   &__overlay {
     visibility: hidden;
     position: fixed;

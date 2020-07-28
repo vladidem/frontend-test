@@ -53,15 +53,10 @@ const GalleryDropzoneOverlay = () => {
 const GalleryDropzone = () => {
   const dispatch = useDispatch();
   const onDrop = (files) => dispatch(addFromFiles(files));
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
-
-  const dropzoneClasses = {
-    dropzone: true,
-    dropzone_active: isDragActive,
-  };
+  const { getRootProps, getInputProps } = useDropzone({ onDrop });
 
   return (
-    <div {...getRootProps({ className: cx(dropzoneClasses) })}>
+    <div {...getRootProps({ className: 'dropzone' })}>
       <button className="button" tabIndex="1">
         <input {...getInputProps()} />
         <AddToPhotos />
