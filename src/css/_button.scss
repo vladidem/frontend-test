@@ -22,12 +22,11 @@
 
   &:hover, &:focus {
     color: $text-primary;
-    border: solid $text-secondary 2px;
+    border: solid $text-secondary 1px;
     box-shadow: 0 0 0.3em $box-shadow;
   }
   &:active {
     border: solid $text-secondary 1px;
     box-shadow: none;
   }
-
 }
