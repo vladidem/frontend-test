@@ -38,6 +38,7 @@
         "react-image": "^4.0.3",
         "react-modal": "^3.11.2",
         "react-redux": "^7.2.1",
+        "react-responsive": "^8.1.0",
         "redux": "^4.0.5",
         "redux-logger": "^3.0.6",
         "redux-thunk": "^2.3.0",
