@@ -31,7 +31,12 @@
     }
     & .button_delete:hover, .button_delete:focus {
       color: $button-delete;
+      border: solid 2px $button-delete;
       box-shadow: 0 0 0.3em $text-danger;
+    }
+    & .button_delete:active {
+      border: solid 1px $button-delete;
+      box-shadow: none;
     }
   }
 

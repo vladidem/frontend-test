@@ -10,6 +10,7 @@
   text-decoration: none;
   border: solid transparent 1px;
   outline: none;
+
   &_icon {
     background-color: transparent;
   }
@@ -21,6 +22,12 @@
 
   &:hover, &:focus {
     color: $text-primary;
+    border: solid $text-secondary 2px;
     box-shadow: 0 0 0.3em $box-shadow;
   }
+  &:active {
+    border: solid $text-secondary 1px;
+    box-shadow: none;
+  }
+
 }
