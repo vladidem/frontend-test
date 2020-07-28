@@ -11,6 +11,9 @@
 
   &__input {
     margin-bottom: 1em;
+    &_textarea {
+      min-height: 10em;
+    }
   }
 
   &__error-message {

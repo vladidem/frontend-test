@@ -13,7 +13,7 @@ import * as yup from 'yup';
 import { GalleryContext } from '../gallery/GalleryContext';
 import { ModalContext } from '../modal/ModalContext';
 
-import {jsonSchema, urlSchema} from './schemas';
+import { jsonSchema, urlSchema } from './schemas';
 
 const anyResolver = (input) => {
   const data = get(input, 'jsonOrUrl', {});
@@ -61,9 +61,15 @@ const AddFromAnyForm = () => {
     <form onSubmit={handleSubmit(onSubmit)} className="form">
       <p className="modal__header">Добавить изображения</p>
 
-      <label className="form__label">Ссылка или JSON</label>
+      <label className="form__label tooltip__target" tabIndex="1">
+        Ссылка или JSON*
+        <div className="tooltip__text">
+          Текст JSON файла. Сам JSON файл можно выбрать/перетащить как и файлы
+          изображений.
+        </div>
+      </label>
       <textarea
-        className="form__input"
+        className="form__input form__input_textarea"
         name="jsonOrUrl"
         ref={register({ required: true })}
         tabIndex="1"
