@@ -10,7 +10,7 @@ import cx from 'classnames';
 
 import { addFromFiles } from '../../redux/images/actions';
 
-const GalleryDropzoneOverlay = () => {
+const GalleryDropzoneOverlay = ({ isDragActive }) => {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
   const showOverlay = () => {
     setIsOverlayVisible(true);
@@ -39,7 +39,7 @@ const GalleryDropzoneOverlay = () => {
 
   const dropzoneOverlayClasses = {
     dropzone__overlay: true,
-    dropzone__overlay_active: isOverlayVisible,
+    dropzone__overlay_active: isOverlayVisible || isDragActive,
   };
 
   return (
@@ -53,7 +53,7 @@ const GalleryDropzoneOverlay = () => {
 const GalleryDropzone = () => {
   const dispatch = useDispatch();
   const onDrop = (files) => dispatch(addFromFiles(files));
-  const { getRootProps, getInputProps } = useDropzone({ onDrop });
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   return (
     <div {...getRootProps({ className: 'dropzone' })}>
@@ -62,7 +62,7 @@ const GalleryDropzone = () => {
         <AddToPhotos />
         <p>Выберите или перетащите файлы</p>
       </button>
-      <GalleryDropzoneOverlay />
+      <GalleryDropzoneOverlay isDragActive={isDragActive} />
     </div>
   );
 };
