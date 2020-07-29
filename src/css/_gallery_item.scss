@@ -5,7 +5,8 @@
   margin: 0.3em;
   position: relative;
   outline: none;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     box-shadow: 0 0 0.5em $box-shadow;
   }
 
@@ -29,7 +30,8 @@
     & .button_delete {
       color: $button-delete;
     }
-    & .button_delete:hover, .button_delete:focus {
+    & .button_delete:hover,
+    .button_delete:focus {
       color: $button-delete;
       border: solid 2px $button-delete;
       box-shadow: 0 0 0.3em $text-danger;
@@ -49,6 +51,12 @@
     &_placeholder {
       background-color: $placeholder;
       height: 100%;
+    }
+    &_error {
+      color: $text-danger;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 }

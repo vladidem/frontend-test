@@ -5,6 +5,7 @@ import { useImage } from 'react-image';
 import { ErrorBoundary } from 'react-error-boundary';
 
 import Placeholder from './Placeholder';
+import ErrorPlaceholder from './ErrorPlaceholder';
 
 const Image = ({ setSize, targetSrc }) => {
   const { src } = useImage({
@@ -33,7 +34,7 @@ const withSuspense = (Component) => ({ children, ...props }) => (
 );
 
 const withErrorBoundary = (Component) => ({ children, ...props }) => (
-  <ErrorBoundary fallback={<Placeholder />}>
+  <ErrorBoundary fallback={<ErrorPlaceholder />}>
     <Component {...props}>{children}</Component>
   </ErrorBoundary>
 );
