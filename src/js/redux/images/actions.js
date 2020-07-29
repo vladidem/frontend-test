@@ -17,11 +17,11 @@ const deleteImage = (id) => ({ type: DELETE_IMAGE, payload: { id } });
 
 const addImage = (image) => (dispatch) => {
   dispatch({ type: ADD_IMAGE, payload: { image } });
-  dispatch(alertSuccess(`1 изображение добавлено`));
+  dispatch(alertSuccess(`Изображений добавлено: 1`));
 };
 const addImages = (images) => (dispatch) => {
   dispatch({ type: ADD_IMAGES, payload: { images } });
-  dispatch(alertSuccess(`${images.length} изображений добавлено`));
+  dispatch(alertSuccess(`Изображений добавлено: ${images.length}`));
 };
 
 const addFromUnsplash = (amount) => (dispatch) => {
