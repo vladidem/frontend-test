@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import DeleteIcon from '@material-ui/icons/DeleteForeverSharp';
 import { deleteImage } from '../../redux/images/actions';
 
-const ImageOverlay = ({ image }) => {
+const GalleryItemOverlay = ({ image }) => {
   const dispatch = useDispatch();
   const { id } = image;
 
@@ -22,4 +22,4 @@ const ImageOverlay = ({ image }) => {
   );
 };
 
-export default ImageOverlay;
+export default GalleryItemOverlay;

@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react';
 import { GalleryContext } from './GalleryContext';
 
 import Image from './Image';
-import ImageOverlay from './ImageOverlay';
+import GalleryItemOverlay from './GalleryItemOverlay';
 
 const GalleryItem = ({ image }) => {
   const { url } = image;
@@ -28,7 +28,7 @@ const GalleryItem = ({ image }) => {
   return (
     <div className="gallery-item" style={galleryItemStyle} tabIndex="1">
       <div style={imageSpacerStyle}></div>
-      <ImageOverlay image={image} />
+      <GalleryItemOverlay image={image} />
       <Image targetSrc={url} setSize={setSize} />
     </div>
   );
