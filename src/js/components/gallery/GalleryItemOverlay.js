@@ -12,7 +12,7 @@ const GalleryItemOverlay = ({ image }) => {
   return (
     <div className="gallery-item__overlay">
       <button
-        className="button button_icon button_delete"
+        className="button button--icon button-delete"
         onClick={() => dispatch(deleteImage(id))}
         tabIndex="1"
       >

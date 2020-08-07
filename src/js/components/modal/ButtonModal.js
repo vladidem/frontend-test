@@ -20,9 +20,9 @@ const DefaultCloseButton = () => {
   const { closeModal } = useContext(ModalContext);
 
   return (
-    <div className="toolbar toolbar_right">
+    <div className="modal__controls">
       <button
-        className="button button_small button_icon"
+        className="button button--small button--icon"
         onClick={closeModal}
         tabIndex="1"
       >

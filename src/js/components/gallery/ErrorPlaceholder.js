@@ -4,7 +4,7 @@ import ErrorIcon from '@material-ui/icons/ErrorOutline';
 
 const ErrorPlaceholder = () => {
   return (
-    <div className="gallery-item__img gallery-item__img_placeholder gallery-item__img_error">
+    <div className="gallery-item__img gallery-item__img--placeholder gallery-item__img--error">
       <ErrorIcon />
     </div>
   );

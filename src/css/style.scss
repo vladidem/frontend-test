@@ -1,14 +1,14 @@
-@import './gallery';
-@import './gallery_item';
-@import './modal';
+@import './gallery/gallery';
+@import './gallery/gallery-item';
+@import './modal/modal';
 @import './footer';
 @import './header';
 @import './button';
 @import './colors';
 @import './form';
-@import './alert';
-@import './dropzone';
-@import './toolbar';
+@import './alerts/alerts';
+@import './gallery-controls/dropzone';
+@import './gallery-controls/gallery-controls';
 @import './tooltip';
 
 * {

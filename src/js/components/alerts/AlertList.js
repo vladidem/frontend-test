@@ -8,8 +8,8 @@ import { ALERT_TYPE_SUCCESS } from '../../redux/alerts/constants';
 
 const Alert = ({ alert }) => {
   const classes = {
-    'alert-list__item': true,
-    'alert-list__item_success': alert.type === ALERT_TYPE_SUCCESS,
+    'alert': true,
+    'alert--success': alert.type === ALERT_TYPE_SUCCESS,
   };
   return <div className={cx(classes)}>{alert.message}</div>;
 };

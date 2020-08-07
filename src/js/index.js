@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import ReactModal from 'react-modal';
 
-import App from './components/App';
+import App from './App';
 
 const wrapper = document.getElementById('container');
 

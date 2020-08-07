@@ -1,10 +1,11 @@
-@import './colors';
+@import '../colors';
 
 .gallery-item {
   flex-grow: 1;
   margin: 0.3em;
   position: relative;
   outline: none;
+
   &:hover,
   &:focus {
     box-shadow: 0 0 0.5em $box-shadow;
@@ -27,16 +28,18 @@
       visibility: visible;
     }
 
-    & .button_delete {
+    & .button-delete {
       color: $button-delete;
     }
-    & .button_delete:hover,
-    .button_delete:focus {
+
+    & .button-delete:hover,
+    .button-delete:focus {
       color: $button-delete;
       border: solid 2px $button-delete;
       box-shadow: 0 0 0.3em $text-danger;
     }
-    & .button_delete:active {
+
+    & .button-delete:active {
       border: solid 1px $button-delete;
       box-shadow: none;
     }
@@ -48,11 +51,12 @@
     width: 100%;
     vertical-align: bottom;
 
-    &_placeholder {
+    &--placeholder {
       background-color: $placeholder;
       height: 100%;
     }
-    &_error {
+
+    &--error {
       color: $text-danger;
       display: flex;
       align-items: center;

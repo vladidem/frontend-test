@@ -55,10 +55,10 @@ const AddFromAnyForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="form">
+    <form onSubmit={handleSubmit(onSubmit)} className="form addfromany-form">
       <p className="modal__header">Добавить изображения</p>
 
-      <label className="form__label tooltip__target" tabIndex="1">
+      <label className="form__label tooltip" tabIndex="1">
         Ссылка или JSON*
         <div className="tooltip__text">
           Текст JSON файла. Сам JSON файл можно выбрать/перетащить как и файлы
@@ -66,7 +66,7 @@ const AddFromAnyForm = () => {
         </div>
       </label>
       <textarea
-        className="form__input form__input_textarea"
+        className="form__input form__input--textarea"
         name="jsonOrUrl"
         ref={register({ required: true })}
         tabIndex="1"

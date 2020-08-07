@@ -41,7 +41,7 @@ const SettingsButton = () => {
 
 const GalleryControls = () => {
   return (
-    <div className="toolbar">
+    <div className="gallery-controls">
       <GalleryDropzone />
       <ButtonModal OpenButton={AddFromAnyButton}>
         <AddFromAnyForm />

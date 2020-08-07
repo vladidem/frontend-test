@@ -32,7 +32,7 @@ const AddFromUnsplashForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="form">
+    <form onSubmit={handleSubmit(onSubmit)} className="form addfromunsplash-form">
       <p className="modal__header">
         Добавить случайные изображения из unsplash
       </p>

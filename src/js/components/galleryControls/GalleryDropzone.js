@@ -39,7 +39,7 @@ const GalleryDropzoneOverlay = ({ isDragActive }) => {
 
   const dropzoneOverlayClasses = {
     dropzone__overlay: true,
-    dropzone__overlay_active: isOverlayVisible || isDragActive,
+    'dropzone__overlay--active': isOverlayVisible || isDragActive,
   };
 
   return (

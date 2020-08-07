@@ -27,7 +27,7 @@ const GalleryItem = ({ image }) => {
 
   return (
     <div className="gallery-item" style={galleryItemStyle} tabIndex="1">
-      <div style={imageSpacerStyle}></div>
+      <div className="gallery-item__spacer" style={imageSpacerStyle}></div>
       <GalleryItemOverlay image={image} />
       <Image targetSrc={url} setSize={setSize} />
     </div>

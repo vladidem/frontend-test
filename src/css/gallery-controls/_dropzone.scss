@@ -2,6 +2,7 @@
   align-self: flex-start;
   flex-shrink: 1;
   margin-right: auto;
+
   @media (max-width: 768px) {
     margin-left: auto;
   }
@@ -19,7 +20,7 @@
     justify-content: center;
     align-items: center;
     z-index: 1011;
-    &_active {
+    &--active {
       visibility: visible;
     }
   }

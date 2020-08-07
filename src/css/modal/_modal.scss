@@ -1,6 +1,14 @@
-@import './colors';
+@import '../colors';
 
 .modal {
+  &__controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin: 1em;
+  }
+
   &__header {
     align-self: center;
     font-size: 1.2em;
