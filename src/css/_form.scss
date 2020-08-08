@@ -11,8 +11,17 @@
 
   &__input {
     margin-bottom: 1em;
+    margin-top: 1em;
+
     &--textarea {
       min-height: 10em;
+    }
+
+    &:focus[data-focus-visible-added] {
+      outline: 2px solid $outline;
+    }
+    &--error:focus[data-focus-visible-added] {
+      outline: 2px solid $text-danger;
     }
   }
 

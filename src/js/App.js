@@ -4,6 +4,8 @@ import { Provider } from 'react-redux';
 
 import '../css/style.scss';
 
+import 'focus-visible/dist/focus-visible.min.js';
+
 import Gallery from './components/gallery/Gallery';
 import Footer from './components/Footer';
 import Header from './components/Header';

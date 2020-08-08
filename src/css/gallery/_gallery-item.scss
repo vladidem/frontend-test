@@ -27,22 +27,6 @@
     .gallery-item:focus-within & {
       visibility: visible;
     }
-
-    & .button-delete {
-      color: $button-delete;
-    }
-
-    & .button-delete:hover,
-    .button-delete:focus {
-      color: $button-delete;
-      border: solid 2px $button-delete;
-      box-shadow: 0 0 0.3em $text-danger;
-    }
-
-    & .button-delete:active {
-      border: solid 1px $button-delete;
-      box-shadow: none;
-    }
   }
 
   &__img {

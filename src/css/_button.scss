@@ -1,18 +1,40 @@
 @import './colors';
 
 .button {
-  background-color: $background-secondary;
+  background-color: $button-primary;
   border-radius: 6px;
-  color: $text-secondary;
+  color: $text-primary;
   padding: 0.5em 0.3em;
   margin: 0.3em;
   text-align: center;
   text-decoration: none;
   border: solid transparent 1px;
   outline: none;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $button-active;
+    box-shadow: 0 0 0.2em $box-shadow;
+  }
+
+  &:active {
+    transform: scale(0.95);
+    background-color: $button-active;
+  }
 
   &--icon {
     background-color: transparent;
+    box-shadow: none;
+
+    &:hover,
+    &:active {
+      box-shadow: none;
+      background-color: transparent;
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
   }
 
   &--small {
@@ -20,13 +42,13 @@
     margin: 0.1em;
   }
 
-  &:hover, &:focus {
-    color: $text-primary;
-    border: solid $text-secondary 1px;
-    box-shadow: 0 0 0.3em $box-shadow;
-  }
-  &:active {
-    border: solid $text-secondary 1px;
-    box-shadow: none;
+  &--delete {
+    color: $button-delete;
+
+    &:hover,
+    &:focus,
+    &:active {
+      outline: 2px solid $button-delete !important;
+    }
   }
 }

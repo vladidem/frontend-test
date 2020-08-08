@@ -5,6 +5,8 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers';
 import * as yup from 'yup';
 
+import cx from 'classnames';
+
 import { GalleryContext } from '../gallery/GalleryContext';
 import { ModalContext } from '../modal/ModalContext';
 
@@ -30,6 +32,11 @@ const SettingsForm = () => {
     }
   };
 
+  const minHeightClasses = {
+    form__input: true,
+    'form__input--error': errors.minHeight,
+  };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form settings-form">
       <p className="modal__header">Изменить минимальную высоту изображений</p>
@@ -39,7 +46,7 @@ const SettingsForm = () => {
       </label>
       <input
         type="number"
-        className="form__input"
+        className={cx(minHeightClasses)}
         name="minHeight"
         ref={register({ required: true })}
         tabIndex="1"

@@ -56,7 +56,7 @@ const GalleryDropzone = () => {
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   return (
-    <div {...getRootProps({ className: 'dropzone' })}>
+    <div {...getRootProps({ className: 'gallery-dropzone dropzone' })}>
       <button className="button" tabIndex="1">
         <input {...getInputProps()} />
         <AddToPhotos />

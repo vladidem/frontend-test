@@ -7,6 +7,8 @@ import { useDispatch } from 'react-redux';
 import get from 'lodash-es/get';
 import isEmpty from 'lodash-es/isEmpty';
 
+import cx from 'classnames';
+
 import { ModalContext } from '../modal/ModalContext';
 
 import { jsonSchema, urlSchema } from './schemas';
@@ -54,8 +56,14 @@ const AddFromAnyForm = () => {
     }
   };
 
+  const jsonOrUrlClasses = {
+    form__input: true,
+    'form__input--textarea': true,
+    'form__input--error': errors.jsonOrUrl,
+  };
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="form addfromany-form">
+    <form onSubmit={handleSubmit(onSubmit)} className="form add-from-any-form">
       <p className="modal__header">Добавить изображения</p>
 
       <label className="form__label tooltip" tabIndex="1">
@@ -66,7 +74,7 @@ const AddFromAnyForm = () => {
         </div>
       </label>
       <textarea
-        className="form__input form__input--textarea"
+        className={cx(jsonOrUrlClasses)}
         name="jsonOrUrl"
         ref={register({ required: true })}
         tabIndex="1"

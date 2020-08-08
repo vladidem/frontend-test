@@ -18,6 +18,15 @@
   box-sizing: border-box;
 }
 
+* :focus:not([data-focus-visible-added]) {
+  outline: none;
+}
+
+* :focus[data-focus-visible-added] {
+  outline: 3px solid $outline;
+  outline-offset: 2px;
+}
+
 .app {
   display: flex;
   flex-direction: column;
