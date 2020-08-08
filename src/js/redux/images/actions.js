@@ -5,13 +5,7 @@ import get from 'lodash-es/get';
 import { ADD_IMAGE, ADD_IMAGES, DELETE_IMAGE, UPDATE_IMAGE } from './constants';
 import { alertSuccess } from '../alerts/actions';
 
-const generateUnsplashImages = (amount) =>
-  [...Array(amount).keys()].map((key) => ({
-    id: shortid.generate(),
-    url: `https://source.unsplash.com/random?sig=${Math.floor(
-      Math.random() * 100000,
-    )}`,
-  }));
+import { generateUnsplashImages } from './unsplashGenerator';
 
 const deleteImage = (id) => ({ type: DELETE_IMAGE, payload: { id } });
 
