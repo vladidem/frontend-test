@@ -6,15 +6,9 @@ import Image from './Image';
 import GalleryItemOverlay from './GalleryItemOverlay';
 
 const GalleryItem = ({ image }) => {
-  const { url } = image;
   const { imageMinHeight } = useContext(GalleryContext);
-
-  const [ratio, setRatio] = useState(1);
-  const setSize = (width, height) => {
-    if (width && height) {
-      setRatio(width / height);
-    }
-  };
+  const { width, height } = image;
+  const ratio = width / height || 1;
 
   const galleryItemStyle = {
     flexGrow: imageMinHeight * ratio,
@@ -29,7 +23,7 @@ const GalleryItem = ({ image }) => {
     <div className="gallery-item" style={galleryItemStyle} tabIndex="1">
       <div className="gallery-item__spacer" style={imageSpacerStyle}></div>
       <GalleryItemOverlay image={image} />
-      <Image targetSrc={url} setSize={setSize} />
+      <Image image={image} />
     </div>
   );
 };

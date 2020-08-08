@@ -1,4 +1,4 @@
-import { ADD_IMAGE, ADD_IMAGES, DELETE_IMAGE } from './constants';
+import { ADD_IMAGE, ADD_IMAGES, DELETE_IMAGE, UPDATE_IMAGE } from './constants';
 
 const initialState = [];
 
@@ -18,6 +18,14 @@ const imagesReducer = (state = initialState, action) => {
       const { id } = action.payload;
 
       return state.filter((image) => image.id !== id);
+    }
+    case UPDATE_IMAGE: {
+      const { id, image: newImage } = action.payload;
+      const oldImage = state.find((image) => image.id === id);
+      const newState = state.filter((image) => image.id !== id);
+
+      newState.push({ ...oldImage, ...newImage });
+      return newState;
     }
     default:
       return state;

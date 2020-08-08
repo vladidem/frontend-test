@@ -2,7 +2,7 @@ import shortid from 'shortid';
 
 import get from 'lodash-es/get';
 
-import { ADD_IMAGE, ADD_IMAGES, DELETE_IMAGE } from './constants';
+import { ADD_IMAGE, ADD_IMAGES, DELETE_IMAGE, UPDATE_IMAGE } from './constants';
 import { alertSuccess } from '../alerts/actions';
 
 const generateUnsplashImages = (amount) =>
@@ -84,4 +84,19 @@ const addFromFiles = (files) => (dispatch) => {
   );
 };
 
-export { deleteImage, addFromFiles, addFromJson, addFromUrl, addFromUnsplash };
+const updateImage = (id, image) => ({
+  type: UPDATE_IMAGE,
+  payload: {
+    id,
+    image,
+  },
+});
+
+export {
+  deleteImage,
+  addFromFiles,
+  addFromJson,
+  addFromUrl,
+  addFromUnsplash,
+  updateImage,
+};

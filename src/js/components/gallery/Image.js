@@ -1,20 +1,33 @@
 import React, { useRef, Suspense } from 'react';
 
+import { useDispatch } from 'react-redux';
+
 import { useImage } from 'react-image';
 
 import { ErrorBoundary } from 'react-error-boundary';
 
 import Placeholder from './Placeholder';
 import ErrorPlaceholder from './ErrorPlaceholder';
+import { updateImage } from '../../redux/images/actions';
 
-const Image = ({ setSize, targetSrc }) => {
+const Image = ({ image }) => {
+  const { url, id, width, height } = image;
+
   const { src } = useImage({
-    srcList: targetSrc,
+    srcList: url,
   });
   const ref = useRef();
+  const dispatch = useDispatch();
 
-  const onLoad = () =>
-    setSize(ref.current.naturalWidth, ref.current.naturalHeight);
+  const onLoad = () => {
+    if (!width || !height) {
+      const dimensions = {
+        width: ref.current.naturalWidth,
+        height: ref.current.naturalHeight,
+      };
+      dispatch(updateImage(id, dimensions));
+    }
+  };
 
   return (
     <img
