@@ -10,6 +10,7 @@
 @import './gallery-controls/dropzone';
 @import './gallery-controls/gallery-controls';
 @import './tooltip';
+@import './lightbox/lightbox';
 
 * {
   padding: 0;
@@ -28,6 +29,7 @@
 }
 
 .app {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
   display: flex;
   flex-direction: column;
   min-height: 100vh;

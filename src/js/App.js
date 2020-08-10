@@ -14,10 +14,12 @@ import AlertList from './components/alerts/AlertList';
 import { GalleryProvider } from './components/gallery/GalleryContext';
 
 import store from './redux/store';
+import LightboxModal from './components/lightbox/LightboxModal';
 
 const App = () => (
   <div className="app">
     <Provider store={store}>
+      <LightboxModal />
       <Header />
       <AlertList />
       <GalleryProvider>

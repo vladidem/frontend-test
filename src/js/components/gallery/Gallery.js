@@ -2,11 +2,13 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 
+import { imagesSelector } from './../../redux/images/selectors';
+
 import GalleryItem from './GalleryItem';
 import GalleryPlaceholder from './GalleryPlaceholder';
 
 const Gallery = () => {
-  const images = useSelector((state) => state.images);
+  const images = useSelector(imagesSelector);
 
   return (
     <div className="gallery">
