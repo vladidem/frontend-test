@@ -8,7 +8,7 @@ import AddToPhotos from '@material-ui/icons/AddToPhotos';
 
 import cx from 'classnames';
 
-import { addFromFiles } from '../../redux/images/actions';
+import { addFromFiles } from '../../redux/images/thunks';
 
 const GalleryDropzoneOverlay = ({ isDragActive }) => {
   const [isOverlayVisible, setIsOverlayVisible] = useState(false);
