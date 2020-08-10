@@ -35,8 +35,13 @@
     width: 100%;
     vertical-align: bottom;
 
+    &--hidden {
+      visibility: hidden;
+    }
+
     &--placeholder {
       background-color: $placeholder;
+      z-index: 2;
       height: 100%;
     }
 

@@ -22,6 +22,7 @@
     right: 0;
     bottom: 0;
     background-color: $modal-overlay;
+    z-index: 1000;
   }
 
   &__content {
@@ -29,6 +30,7 @@
     padding: 1em;
     background-color: white;
     top: 20%;
+    z-index: 1000;
 
     @media (max-width: 575.99px) {
       left: 10%;
