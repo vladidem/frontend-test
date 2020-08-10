@@ -41,7 +41,7 @@ const SettingsForm = () => {
     <form onSubmit={handleSubmit(onSubmit)} className="form settings-form">
       <p className="modal__header">Изменить минимальную высоту изображений</p>
 
-      <label className="form__label" tabIndex="1">
+      <label className="form__label" tabIndex="0">
         Минимальная высота изображений
       </label>
       <input
@@ -49,7 +49,7 @@ const SettingsForm = () => {
         className={cx(minHeightClasses)}
         name="minHeight"
         ref={register({ required: true })}
-        tabIndex="1"
+        tabIndex="0"
       />
       {errors.minHeight && (
         <div className="form__error-message">
@@ -57,7 +57,7 @@ const SettingsForm = () => {
         </div>
       )}
 
-      <button className="button" type="submit" tabIndex="1">
+      <button className="button" type="submit" tabIndex="0">
         Сохранить изменения
       </button>
     </form>

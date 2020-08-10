@@ -53,7 +53,7 @@ const AddFromUnsplashForm = () => {
         className={cx(amountClasses)}
         name="amount"
         ref={register({ required: true })}
-        tabIndex="1"
+        tabIndex="0"
       />
       {errors.amount && (
         <div className="form__error-message">
@@ -61,7 +61,7 @@ const AddFromUnsplashForm = () => {
         </div>
       )}
 
-      <button className="button" type="submit" tabIndex="1">
+      <button className="button" type="submit" tabIndex="0">
         Добавить изображения
       </button>
     </form>

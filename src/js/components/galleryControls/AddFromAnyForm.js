@@ -66,7 +66,7 @@ const AddFromAnyForm = () => {
     <form onSubmit={handleSubmit(onSubmit)} className="form add-from-any-form">
       <p className="modal__header">Добавить изображения</p>
 
-      <label className="form__label tooltip" tabIndex="1">
+      <label className="form__label tooltip" tabIndex="0">
         Ссылка или JSON*
         <div className="tooltip__text">
           Текст JSON файла. Сам JSON файл можно выбрать/перетащить как и файлы
@@ -77,7 +77,7 @@ const AddFromAnyForm = () => {
         className={cx(jsonOrUrlClasses)}
         name="jsonOrUrl"
         ref={register({ required: true })}
-        tabIndex="1"
+        tabIndex="0"
       />
       {errors.jsonOrUrl && (
         <div className="form__error-message">
@@ -85,7 +85,7 @@ const AddFromAnyForm = () => {
         </div>
       )}
 
-      <button className="button" type="submit" tabIndex="1">
+      <button className="button" type="submit" tabIndex="0">
         Добавить изображения
       </button>
     </form>

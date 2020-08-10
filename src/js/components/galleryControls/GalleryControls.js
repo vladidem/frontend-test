@@ -13,7 +13,7 @@ const AddFromAnyButton = () => {
   const { openModal } = useContext(ModalContext);
 
   return (
-    <button className="button" onClick={openModal} tabIndex="1">
+    <button className="button" onClick={openModal} tabIndex="0">
       Добавить по ссылке или из JSON
     </button>
   );
@@ -23,7 +23,7 @@ const AddFromUnsplashButton = () => {
   const { openModal } = useContext(ModalContext);
 
   return (
-    <button className="button" onClick={openModal} tabIndex="1">
+    <button className="button" onClick={openModal} tabIndex="0">
       Добавить из unsplash
     </button>
   );
@@ -33,7 +33,7 @@ const SettingsButton = () => {
   const { openModal } = useContext(ModalContext);
 
   return (
-    <button className="button" onClick={openModal} tabIndex="1">
+    <button className="button" onClick={openModal} tabIndex="0">
       <SettingsIcon />
     </button>
   );

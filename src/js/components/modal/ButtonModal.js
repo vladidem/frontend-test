@@ -10,7 +10,7 @@ const DefaultOpenButton = () => {
   const { openModal } = useContext(ModalContext);
 
   return (
-    <button className="button" onClick={openModal} tabIndex="1">
+    <button className="button" onClick={openModal} tabIndex="0">
       Открыть
     </button>
   );
@@ -24,7 +24,7 @@ const DefaultCloseButton = () => {
       <button
         className="button button--small button--icon"
         onClick={closeModal}
-        tabIndex="1"
+        tabIndex="0"
       >
         <CloseIcon />
       </button>
