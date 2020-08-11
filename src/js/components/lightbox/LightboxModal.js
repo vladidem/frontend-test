@@ -7,8 +7,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import get from 'lodash-es/get';
 
 import CloseIcon from '@material-ui/icons/Close';
-import NextIcon from '@material-ui/icons/SkipNext';
-import PreviousIcon from '@material-ui/icons/SkipPrevious';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
 import { currentSelected } from '../../redux/lightbox/selectors';
 import { closeLightbox } from '../../redux/lightbox/actions';
@@ -64,7 +64,7 @@ const LightboxModal = () => {
         className="button button--icon lightbox__button lightbox__previous"
         onClick={previous}
       >
-        <PreviousIcon className="icon" />
+        <ChevronLeftIcon className="icon" />
       </button>
 
       <div className="lightbox__image-container">
@@ -75,7 +75,7 @@ const LightboxModal = () => {
         className="button button--icon lightbox__button lightbox__next"
         onClick={next}
       >
-        <NextIcon className="icon" />
+        <ChevronRightIcon className="icon" />
       </button>
     </ReactModal>
   );
