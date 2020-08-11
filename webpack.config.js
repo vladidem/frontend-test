@@ -1,4 +1,5 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
+const autoprefixer = require('autoprefixer');
 
 const path = require('path');
 const srcPath = path.resolve(__dirname, 'src');
@@ -33,6 +34,13 @@ module.exports = {
           'style-loader',
           // Translates CSS into CommonJS
           'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              plugins: [autoprefixer()],
+              sourceMap: true,
+            },
+          },
           // Compiles Sass to CSS
           'sass-loader',
         ],
@@ -45,4 +53,8 @@ module.exports = {
       filename: './index.html',
     }),
   ],
+  devServer: {
+    compress: true,
+    disableHostCheck: true, // That solved it
+  },
 };
